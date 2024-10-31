@@ -1,0 +1,75 @@
+.App {
+  max-width: 860px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  border: none;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+.button-light {
+  background-color: var(--button-background-light);
+  color: var(--button-text-color-light);
+}
+
+.button-dark {
+  background-color: var(--button-background-dark);
+  color: var(--button-text-color-dark);
+}
+
+.card-grid {
+  display: grid;
+  gap: 12px; 
+  margin-top: 20px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.card > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card img {
+  width: 100%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+.back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+  position: absolute;
+  transform: rotateY(0deg);
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
